@@ -1,17 +1,25 @@
 # Installacion tools
 
 ### Jwt-cli
+```bash
 brew install mike-engel/jwt-cli/jwt-cli
+```
 
-### Kubectl 1.24
-https://dl.k8s.io/v1.23.13/kubernetes-client-darwin-amd64.tar.gz
+### Kubectl 1.23
+```bash
+wget kubernetes-client-darwin-amd64.tar.gz https://dl.k8s.io/v1.23.13/kubernetes-client-darwin-amd64.tar.gz
+tar -xvzf kubernetes-client-darwin-amd64.tar.gz
+mv ./kubernetes/client/bin/kubectl /user/local/bin/
+```
 
-#Install eksctl (coge las credenciales de ~/.aws/credentials o en variable de entorno)
+### Install eksctl (coge las credenciales de ~/.aws/credentials o en variable de entorno)
+```
 brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
 eksctl version
+```
 
-10.1.2.67
+# Configure client
 ```bash
 aws eks update-kubeconfig --name cluster-eks02 --region eu-west-1
 kubectl config current-context
